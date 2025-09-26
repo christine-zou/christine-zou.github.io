@@ -71,22 +71,41 @@ section h2 {
 }
 
 /* Experience */
+/* Experience Section */
 .exp-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
   margin-bottom: 2rem;
 }
-.exp-item h3 {
-  font-size: 1.3rem;
-  color: #222;
+
+.company-logo {
+  width: 60px;     /* adjust size as needed */
+  height: auto;
+  flex-shrink: 0;  /* prevents squishing */
 }
+
+.exp-content {
+  flex: 1;
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.exp-header h3,
+.exp-header h4 {
+  margin: 0;
+}
+
 .exp-date {
   font-size: 0.9rem;
-  color: #666;
-  margin-bottom: 0.5rem;
+  color: #555;
+  margin-left: 1rem;
 }
-.exp-item ul {
-  margin-left: 1.2rem;
-  list-style: disc;
-}
+
 
 /* Projects */
 .project-grid {
