@@ -62,6 +62,20 @@ header {
   margin-left: auto;
   margin-right: auto;
 }
+.hero-container {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.profile-photo {
+  width: 150px;          /* adjust size as needed */
+  height: 150px;
+  object-fit: cover;      /* ensures it fills the circle without distortion */
+  border-radius: 50%;     /* makes it circular */
+  border: 3px solid #333; /* optional border around the photo */
+  margin-bottom: 1rem;
+}
+
 
 /* Sections */
 section h2 {
