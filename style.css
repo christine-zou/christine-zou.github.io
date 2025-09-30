@@ -24,11 +24,12 @@ header {
 
 .nav-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* pushes title left, nav right */
   align-items: center;
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  width: 100%;
 }
 
 .site-title {
@@ -36,6 +37,11 @@ header {
   font-size: 1.8rem;
   margin: 0;
   font-family: 'Playfair Display', serif;
+  flex-shrink: 0; /* keeps your name from squeezing */
+}
+
+.site-nav {
+  margin-left: auto; /* ensures nav goes all the way right */
 }
 
 .site-nav a {
@@ -45,10 +51,6 @@ header {
   font-weight: 600;
   font-family: 'Open Sans', sans-serif;
   transition: color 0.2s ease;
-}
-
-.site-nav a:hover {
-  color: #f0f0f0; /* softer hover contrast */
 }
 
 /* Hero */
