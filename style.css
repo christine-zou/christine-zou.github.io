@@ -164,6 +164,13 @@ section h2 {
   border-radius: 8px;
 }
 
+.exp-separator {
+  width: 100%;
+  height: 12px;                 /* thickness of the bar */
+  background-color: #4B7F52;    /* warm dark green */
+  margin: 3rem 0;               /* spacing above/below */
+}
+
 /* Mobile stacking */
 @media (max-width: 768px) {
   .exp-row,
