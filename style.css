@@ -105,7 +105,7 @@ section h2 {
 /* Separator bar */
 .exp-block {
   margin-bottom: 3rem;
-  border-bottom: 4px solid #355E3B; /* warm dark green bar */
+  border-bottom: 6px solid #355E3B; /* warm dark green bar */
   padding-bottom: 3rem;
 }
 
