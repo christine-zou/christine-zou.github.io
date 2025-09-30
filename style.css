@@ -15,7 +15,7 @@ body {
 
 /* Header */
 header {
-  background-color: #7BAE9F; /* light neutral green */
+  background-color: #6FAF92; /* darker neutral green */
   padding: 1rem 0;
   position: sticky; /* stays visible when scrolling */
   top: 0;
