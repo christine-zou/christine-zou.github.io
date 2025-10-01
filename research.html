@@ -11,34 +11,52 @@
   <!-- Header -->
   <header>
     <div class="container nav-container">
-      
+      <h1 class="site-title">Christine Zou</h1>
       <nav class="site-nav">
         <a href="index.html">About</a>
         <a href="experience.html">Experience</a>
         <a href="projects.html">Projects</a>
         <a href="research.html">Research</a>
-        <a href="#contact">Contact</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- Main Content -->
+  <!-- Research Section -->
   <main>
-    <section class="research">
+    <section id="research" class="research">
       <div class="container">
         <h2>Research</h2>
-        <p>Here you can list publications, research projects, or studies you’ve contributed to. Use cards or sections to organize each item.</p>
 
-        <!-- Example Research Item -->
-        <div class="research-item">
-          <h3>Research Project Title</h3>
-          <p>Brief description of the research, methods, and outcomes.</p>
+        <!-- Tabs -->
+        <div class="tab-container">
+          <button class="tab active" onclick="openTab(event, 'proj1')">Project One</button>
+          <button class="tab" onclick="openTab(event, 'proj2')">Project Two</button>
+          <button class="tab" onclick="openTab(event, 'proj3')">Project Three</button>
         </div>
 
-        <div class="research-item">
-          <h3>Another Research Project</h3>
-          <p>Brief description of the research, methods, and outcomes.</p>
+        <!-- Tab Content -->
+        <div id="proj1" class="tab-content active">
+          <h3>Research Project One</h3>
+          <p>
+            Description of your first research project. Explain the problem statement, your role, and outcomes.
+          </p>
         </div>
+
+        <div id="proj2" class="tab-content">
+          <h3>Research Project Two</h3>
+          <p>
+            Description of your second research project. Include tools, methodology, and results.
+          </p>
+        </div>
+
+        <div id="proj3" class="tab-content">
+          <h3>Research Project Three</h3>
+          <p>
+            Description of your third research project. Highlight impact, papers, or presentations.
+          </p>
+        </div>
+
       </div>
     </section>
   </main>
