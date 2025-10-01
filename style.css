@@ -14,14 +14,15 @@ body {
 }
 
 .experience ul {
-  margin: 0 0 1.5rem 0;   /* spacing between lists and next block */
-  padding: 0;             /* remove default browser padding */
+  margin: 0 0 1.5rem 1.5rem; /* controls overall left indent */
+  padding: 0;
 }
 
 .experience li {
-  list-style-type: disc;      /* regular bullets */
-  list-style-position: inside;/* aligns text with bullet */
-  margin: 0.25rem 0;          /* small spacing between items */
+  list-style-type: disc;
+  list-style-position: outside; /* bullet outside the text box */
+  padding-left: 0.5rem;         /* small gap between bullet and text */
+  margin: 0.5rem 0;             /* vertical spacing */
 }
 
 /* Header */
