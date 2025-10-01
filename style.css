@@ -338,6 +338,47 @@ section h2 {
   background-color: #355E3B; /* match your theme green */
 }
 
+/* Tabs container */
+.tab-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.tab {
+  padding: 0.75rem 1.5rem;
+  background-color: #eee;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px 5px 0 0;
+  transition: background 0.3s;
+}
+
+.tab:hover {
+  background-color: #ddd;
+}
+
+.tab.active {
+  background-color: #4B7F52;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Tab content */
+.tab-content {
+  display: none;
+  padding: 1.5rem;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
+  background-color: #f9f9f9;
+}
+
+.tab-content.active {
+  display: block;
+}
 
 /* About */
 .about p {
