@@ -13,6 +13,12 @@ body {
   padding: 2rem 0;
 }
 
+li {
+  list-style-position: outside; /* default: bullet sits outside the text block */
+  margin-left: 0;               /* keeps bullets aligned neatly */
+}
+
+
 /* Header */
 header {
   background-color: #355E3B; /* darker neutral green */
