@@ -55,3 +55,21 @@ function openTab(evt, tabId) {
 document.addEventListener("DOMContentLoaded", function() {
   document.querySelector(".tab").click();
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  const accordions = document.querySelectorAll(".accordion");
+
+  accordions.forEach(acc => {
+    acc.addEventListener("click", function() {
+      this.classList.toggle("active");
+
+      let panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  });
+});
+
