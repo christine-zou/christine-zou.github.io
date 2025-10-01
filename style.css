@@ -339,7 +339,7 @@ section h2 {
 }
 
 .accordion {
-  background-color: #4B7F52; /* warm dark green */
+  background-color: #355E3B;
   color: #fff;
   cursor: pointer;
   padding: 1rem;
@@ -358,18 +358,21 @@ section h2 {
 }
 
 .panel {
-  padding: 1rem;
-  display: none;
+  max-height: 0;                 /* closed by default */
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
   background-color: #f9f9f9;
-  border-left: 3px solid #355E3B;
-  margin-bottom: 1rem;
+  border-left: 3px solid #4B7F52;
   border-radius: 0 0 5px 5px;
+  margin-bottom: 1rem;
+  padding: 0 1rem;               /* horizontal padding only */
 }
 
 .panel p {
-  margin: 0;
+  margin: 1rem 0;
   line-height: 1.6;
 }
+
 
 /* Tabs container */
 .tab-container {
