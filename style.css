@@ -339,7 +339,7 @@ section h2 {
 }
 
 .accordion {
-  background-color: #355E3B;
+  background-color: #4B7F52;
   color: #fff;
   cursor: pointer;
   padding: 1rem;
@@ -351,27 +351,40 @@ section h2 {
   transition: background 0.3s;
   border-radius: 5px;
   margin-bottom: 0.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .accordion:hover {
   background-color: #3A6341;
 }
 
+.chevron {
+  transition: transform 0.3s ease;
+}
+
+.accordion.active .chevron {
+  transform: rotate(180deg); /* flips arrow when open */
+}
+
 .panel {
-  max-height: 0;                 /* closed by default */
+  max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease-out;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
   background-color: #f9f9f9;
   border-left: 3px solid #4B7F52;
   border-radius: 0 0 5px 5px;
   margin-bottom: 1rem;
-  padding: 0 1rem;               /* horizontal padding only */
+  padding: 0 1rem;
 }
 
 .panel p {
   margin: 1rem 0;
   line-height: 1.6;
 }
+
 
 
 /* Tabs container */
