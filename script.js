@@ -53,10 +53,6 @@ function openTab(evt, tabId) {
 
 // Show the first tab by default
 document.addEventListener("DOMContentLoaded", function() {
-  document.querySelector(".tab").click();
-});
-
-document.addEventListener("DOMContentLoaded", function() {
   const accordions = document.querySelectorAll(".accordion");
 
   accordions.forEach(acc => {
@@ -64,12 +60,17 @@ document.addEventListener("DOMContentLoaded", function() {
       this.classList.toggle("active");
 
       let panel = this.nextElementSibling;
-      if (panel.style.display === "block") {
-        panel.style.display = "none";
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;  // close
+        panel.style.paddingTop = "0";  // remove extra padding
+        panel.style.paddingBottom = "0";
       } else {
-        panel.style.display = "block";
+        panel.style.maxHeight = panel.scrollHeight + "px";  // open
+        panel.style.paddingTop = "1rem";
+        panel.style.paddingBottom = "1rem";
       }
     });
   });
 });
+
 
