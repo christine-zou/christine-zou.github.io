@@ -338,6 +338,39 @@ section h2 {
   background-color: #355E3B; /* match your theme green */
 }
 
+.accordion {
+  background-color: #4B7F52; /* warm dark green */
+  color: #fff;
+  cursor: pointer;
+  padding: 1rem;
+  width: 100%;
+  border: none;
+  text-align: left;
+  font-size: 1.2rem;
+  font-family: 'Open Sans', sans-serif;
+  transition: background 0.3s;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}
+
+.accordion:hover {
+  background-color: #3A6341;
+}
+
+.panel {
+  padding: 1rem;
+  display: none;
+  background-color: #f9f9f9;
+  border-left: 3px solid #355E3B;
+  margin-bottom: 1rem;
+  border-radius: 0 0 5px 5px;
+}
+
+.panel p {
+  margin: 0;
+  line-height: 1.6;
+}
+
 /* Tabs container */
 .tab-container {
   display: flex;
