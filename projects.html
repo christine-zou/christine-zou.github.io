@@ -17,34 +17,73 @@
         <a href="experience.html">Experience</a>
         <a href="projects.html">Projects</a>
         <a href="research.html">Research</a>
-        <a href="#contact">Contact</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- Main Content -->
+  <!-- Projects Section -->
   <main>
-    <section class="projects">
+    <section id="projects" class="projects">
       <div class="container">
         <h2>Projects</h2>
-        <div class="project-grid">
-          <!-- Example Project Card -->
-          <div class="project-card">
-            <img src="images/project1.jpg" alt="Project One" />
-            <h3>Project One</h3>
-            <p>Short description of Project One.</p>
-            <a href="#" target="_blank">View Project</a>
+
+        <div class="slideshow-container">
+
+          <!-- Project 1 -->
+          <div class="slide fade">
+            <img src="images/project1.jpg" alt="Project One">
+            <div class="caption">
+              <h3>Project One</h3>
+              <p>Short description of this project goes here. Highlight tools or impact.</p>
+              <a href="#" target="_blank">View Project</a>
+            </div>
           </div>
 
-          <div class="project-card">
-            <img src="images/project2.jpg" alt="Project Two" />
-            <h3>Project Two</h3>
-            <p>Short description of Project Two.</p>
-            <a href="#" target="_blank">View Project</a>
+          <!-- Project 2 -->
+          <div class="slide fade">
+            <img src="images/project2.jpg" alt="Project Two">
+            <div class="caption">
+              <h3>Project Two</h3>
+              <p>Another project description with a few sentences of context.</p>
+              <a href="#" target="_blank">View Project</a>
+            </div>
           </div>
 
-          <div class="project-card">
-            <img src="images/project3.jpg" alt="Project Three" />
-            <h3>Project Three</h3>
-            <p>Short description of Project Three.</p>
-            <a href=
+          <!-- Project 3 -->
+          <div class="slide fade">
+            <img src="images/project3.jpg" alt="Project Three">
+            <div class="caption">
+              <h3>Project Three</h3>
+              <p>Explain the problem solved, technologies used, or outcome.</p>
+              <a href="#" target="_blank">View Project</a>
+            </div>
+          </div>
+
+          <!-- Navigation Arrows -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <!-- Dots for navigation -->
+        <div class="dots">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2025 Christine Zou</p>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
