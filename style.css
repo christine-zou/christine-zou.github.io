@@ -42,11 +42,12 @@ a:active {
   justify-content: center; /* centers the row */
 }
 
-.image-row img {
-  flex: 1 1 300px;   /* each image takes min ~300px, then wraps */
-  max-width: 100%;   /* prevents overflow */
+.image-row img {  /* each image takes min ~300px, then wraps */
+  width: 30%;   /* prevents overflow */
+  min-width: 200px;
   height: auto;
   border-radius: 8px;
+  object-fit: cover;
 }
 
 .mini-title {
