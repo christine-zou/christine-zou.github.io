@@ -441,63 +441,40 @@ section h2 {
   color: #333;
 }
 
-/* Two-column layout (already added before) */
+/* Two-column layout */
 .project-two-col {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  align-items: center;
-  justify-content: center;
-  margin: 2rem 0;
+  align-items: flex-start;
+  margin-bottom: 2rem;
 }
 
 .project-text {
-  flex: 1 1 45%; /* grows but prefers ~45% width */
-}
-
-.project-text h3 {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-.project-text p {
-  line-height: 1.6;
-  margin-bottom: 1rem;
+  flex: 1 1 45%;   /* left column */
 }
 
 .project-media {
-  flex: 1 1 45%;
-  text-align: center;
-}
-
-.project-media img,
-.project-media iframe {
-  max-width: 100%;
-  border-radius: 8px;
-}
-
-/* --- For side-by-side images in two-column format --- */
-.project-media.image-row {
+  flex: 1 1 45%;   /* right column */
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  flex-direction: column;  /* stack vertically */
+  gap: 1.5rem;
 }
 
-.project-media.image-row .image-container {
+/* Each image container */
+.project-two-col .image-container {
   position: relative;
-  flex: 1 1 calc(50% - 1rem);  /* 2 per row */
-  max-width: calc(50% - 1rem);
+  width: 100%;
 }
 
-.project-media.image-row .image-container img {
+.project-two-col .image-container img {
   width: 100%;
   height: auto;
   border-radius: 8px;
 }
 
-/* Hover caption for small images */
-.project-media.image-row .caption {
+/* Hover captions */
+.project-two-col .caption {
   position: absolute;
   bottom: 0; left: 0; right: 0;
   background: rgba(0, 0, 0, 0.7);
@@ -510,9 +487,10 @@ section h2 {
   border-radius: 0 0 8px 8px;
 }
 
-.project-media.image-row .image-container:hover .caption {
+.project-two-col .image-container:hover .caption {
   opacity: 1;
 }
+
 
 .project-full {
   margin-top: 2rem;
