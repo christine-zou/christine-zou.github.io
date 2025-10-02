@@ -181,14 +181,27 @@ section h2 {
   margin-bottom: 2rem;
 }
 .project-text { flex: 1 1 35%; max-width: 400px; }
-.project-media { flex: 2 1 60%; display: flex; flex-direction: column; gap: 1.5rem; }
+.project-media {
+  flex: 2 1 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;   /* centers smaller images */
+}
 
-.project-two-col .image-container { position: relative; width: 100%; }
+.project-two-col .image-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;       /* prevent giant blow-ups */
+}
+
 .project-two-col .image-container img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   border-radius: 8px;
-  object-fit: contain;
+  object-fit: contain;    /* ensures it won’t stretch */
+}
+
 }
 .project-two-col .caption {
   position: absolute; bottom: 0; left: 0; right: 0;
