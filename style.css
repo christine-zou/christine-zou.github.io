@@ -51,13 +51,14 @@ a:active {
 }
 .image-container {
   position: relative;
-  display: inline-block;
-  margin: 1rem;
+  flex: 1 1 200px;
+  max-width: 30%;
 }
 
 .image-container img {
   display: block;
   width: 100%;
+  height: auto;
   border-radius: 8px;
 }
 
