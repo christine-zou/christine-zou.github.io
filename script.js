@@ -44,25 +44,38 @@ document.addEventListener("DOMContentLoaded", function() {
 
   accordions.forEach(acc => {
     acc.addEventListener("click", function() {
+      // Close all panels first
+      accordions.forEach(other => {
+        if (other !== acc) {
+          other.classList.remove("active");
+          let otherPanel = other.nextElementSibling;
+          let otherChevron = other.querySelector(".chevron");
+          if (otherPanel) {
+            otherPanel.style.maxHeight = null;
+            otherPanel.style.paddingTop = "0";
+            otherPanel.style.paddingBottom = "0";
+          }
+          if (otherChevron) {
+            otherChevron.style.transform = "rotate(0deg)";
+          }
+        }
+      });
+
+      // Toggle the clicked panel
       this.classList.toggle("active");
-
-      let chevron = this.querySelector(".chevron");
       let panel = this.nextElementSibling;
+      let chevron = this.querySelector(".chevron");
 
-      // Toggle chevron
-      if (chevron) {
-        chevron.style.transform = panel.style.maxHeight ? "rotate(0deg)" : "rotate(180deg)";
-      }
-
-      // Toggle panel
       if (panel.style.maxHeight) {
-        panel.style.maxHeight = null;  // close
+        panel.style.maxHeight = null; // close
         panel.style.paddingTop = "0";
         panel.style.paddingBottom = "0";
+        if (chevron) chevron.style.transform = "rotate(0deg)";
       } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";  // open
+        panel.style.maxHeight = panel.scrollHeight + "px"; // open
         panel.style.paddingTop = "1rem";
         panel.style.paddingBottom = "1rem";
+        if (chevron) chevron.style.transform = "rotate(180deg)";
       }
     });
   });
