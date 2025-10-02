@@ -185,7 +185,7 @@ section h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 2rem;
 }
 .project-text { flex: 1 1 35%; max-width: 400px; }
