@@ -35,31 +35,45 @@ a:active {
   color: #FF6600; /* orange when active */
 }
 
+/* Only apply grid-like sizing inside rows */
 .image-row {
   display: flex;
-  flex-wrap: wrap;   /* allows wrapping */
-  gap: 1rem;         /* space between images */
-  justify-content: center; /* centers the row */
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
 }
 
-.image-row img {  /* each image takes min ~300px, then wraps */
-  width: 30% !important;   /* prevents overflow */
-  min-width: 200px;
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
-}
-.image-container {
+.image-row .image-container {
   position: relative;
-  flex: 1 1 200px;
-  max-width: 30%;
+  flex: 1 1 300px;   /* min size ~300px */
+  max-width: 30%;   /* about 3 per row */
 }
 
-.image-container img {
+.image-row .image-container img {
   display: block;
   width: 100%;
   height: auto;
   border-radius: 8px;
+}
+
+/* Caption overlay */
+.image-row .caption {
+  position: absolute;
+  bottom: 0; 
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 0 0 8px 8px;
+}
+
+.image-row .image-container:hover .caption {
+  opacity: 1;
 }
 
 /* Caption overlay */
@@ -438,9 +452,11 @@ section h2 {
 }
 
 .project-full img {
-  max-width: 100%;
+  display: block;
+  max-width: 90%;  /* big and centered */
   height: auto;
-  border-radius: 10px;
+  margin: 0 auto;
+  border-radius: 8px;
 }
 
 .slideshow-container {
