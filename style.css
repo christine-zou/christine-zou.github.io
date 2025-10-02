@@ -447,18 +447,19 @@ section h2 {
   flex-wrap: wrap;
   gap: 2rem;
   align-items: flex-start;
-  margin-bottom: 2rem;
 }
 
 .project-text {
-  flex: 1 1 45%;   /* left column */
+  flex: 1 1 300px;  /* takes min 300px, grows as needed */
 }
 
 .project-media {
-  flex: 1 1 45%;   /* right column */
-  display: flex;
-  flex-direction: column;  /* stack vertically */
-  gap: 1.5rem;
+  flex: 2 1 500px;  /* takes ~twice as much space as text */
+}
+
+.project-media img {
+  width: 100%;
+  height: auto;
 }
 
 /* Each image container */
