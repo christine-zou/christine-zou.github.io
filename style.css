@@ -352,6 +352,17 @@ section h2 {
   border-radius: 8px;
 }
 
+.project-full {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.project-full img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
 .slideshow-container {
   position: relative;
   max-width: 800px;
