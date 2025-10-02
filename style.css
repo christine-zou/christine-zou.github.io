@@ -43,8 +43,7 @@ a:active {
 }
 
 .image-row img {  /* each image takes min ~300px, then wraps */
-  width: 30%;   /* prevents overflow */
-  min-width: 200px;
+  width: 30% !important;   /* prevents overflow */
   height: auto;
   border-radius: 8px;
   object-fit: cover;
