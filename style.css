@@ -143,6 +143,26 @@ section h2 {
 /* =============================
    PROJECTS PAGE
 ============================= */
+
+/* Project navigation buttons */
+.project-buttons {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.project-buttons button {
+  background-color: #eee;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  margin: 0 0.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.project-buttons button:hover { background-color: #ddd; }
+.project-buttons button.active { background-color: #355E3B; color: #fff; }
+
 /* Project title */
 .project-title {
   text-align: center;
@@ -164,7 +184,12 @@ section h2 {
 .project-media { flex: 2 1 60%; display: flex; flex-direction: column; gap: 1.5rem; }
 
 .project-two-col .image-container { position: relative; width: 100%; }
-.project-two-col .image-container img { width: 100%; border-radius: 8px; }
+.project-two-col .image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+}
 .project-two-col .caption {
   position: absolute; bottom: 0; left: 0; right: 0;
   background: rgba(0, 0, 0, 0.7); color: #fff;
@@ -201,6 +226,8 @@ section h2 {
   opacity: 0; transition: opacity 0.3s ease; border-radius: 0 0 8px 8px;
 }
 .image-row .image-container:hover .caption { opacity: 1; }
+
+
 
 /* =============================
    RESEARCH PAGE (Accordion)
