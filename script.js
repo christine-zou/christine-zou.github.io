@@ -81,35 +81,3 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-/************************************
- * LIGHTBOX
- ************************************/
-document.addEventListener("DOMContentLoaded", function() {
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightbox-img");
-  const captionText = document.getElementById("lightbox-caption");
-  const closeBtn = document.querySelector(".lightbox-close");
-
-  // All images that should open in lightbox
-  const triggers = document.querySelectorAll(".lightbox-trigger");
-
-  triggers.forEach(img => {
-    img.addEventListener("click", function() {
-      lightbox.style.display = "block";
-      lightboxImg.src = this.src;
-      captionText.innerHTML = this.alt;
-    });
-  });
-
-  // Close when clicking X
-  closeBtn.addEventListener("click", function() {
-    lightbox.style.display = "none";
-  });
-
-  // Close when clicking outside the image
-  lightbox.addEventListener("click", function(e) {
-    if (e.target === lightbox) {
-      lightbox.style.display = "none";
-    }
-  });
-});
