@@ -306,6 +306,26 @@ section h2 {
   text-decoration: underline;
 }
 
+/* Project title centered above two-column layout */
+.project-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  font-family: 'Playfair Display', serif;
+  color: #333;
+}
+
+/* Two-column layout (already added before) */
+.project-two-col {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
 .slideshow-container {
   position: relative;
   max-width: 800px;
