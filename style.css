@@ -42,6 +42,7 @@ a:active {
   margin-bottom: 1rem;
   font-family: 'Playfair Display', serif;
   color: #333;
+  line-height: 1.3;
 }
 
 .experience ul {
