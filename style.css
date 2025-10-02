@@ -35,6 +35,20 @@ a:active {
   color: #FF6600; /* orange when active */
 }
 
+.image-row {
+  display: flex;
+  flex-wrap: wrap;   /* allows wrapping */
+  gap: 1rem;         /* space between images */
+  justify-content: center; /* centers the row */
+}
+
+.image-row img {
+  flex: 1 1 300px;   /* each image takes min ~300px, then wraps */
+  max-width: 100%;   /* prevents overflow */
+  height: auto;
+  border-radius: 8px;
+}
+
 .mini-title {
   text-align: center;
   font-size: 1.6rem;   /* between h2 (~2rem) and h3 (~1.2rem) */
