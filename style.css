@@ -21,6 +21,14 @@ body {
   padding: 2rem 0;
 }
 
+p {
+  margin-bottom: 1.5rem; /* adds extra space after each paragraph */
+}
+
+h3 {
+  margin-top: 2rem;  /* space above */
+  margin-bottom: 1rem; /* space below */
+}
 /* =============================
    LINKS
 ============================= */
