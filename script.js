@@ -17,9 +17,9 @@ function currentSlide(n) {
 function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("slide");
-  let dots = document.getElementsByClassName("dot");
+  let buttons = document.querySelectorAll(".project-buttons button");
 
-  if (slides.length === 0) return; // If no slides on page, skip
+  if (slides.length === 0) return;
 
   if (n > slides.length) { slideIndex = 1 }
   if (n < 1) { slideIndex = slides.length }
@@ -28,12 +28,12 @@ function showSlides(n) {
     slides[i].style.display = "none";
   }
 
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
+  for (i = 0; i < buttons.length; i++) {
+    buttons[i].classList.remove("active");
   }
 
   slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
+  buttons[slideIndex - 1].classList.add("active");
 }
 
 /************************************
