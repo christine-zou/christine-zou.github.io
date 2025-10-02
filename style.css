@@ -35,6 +35,15 @@ a:active {
   color: #FF6600; /* orange when active */
 }
 
+.mini-title {
+  text-align: center;
+  font-size: 1.6rem;   /* between h2 (~2rem) and h3 (~1.2rem) */
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+  color: #333;
+}
+
 .experience ul {
   margin: 0 0 1.5rem 1.5rem; /* controls overall left indent */
   padding: 0;
