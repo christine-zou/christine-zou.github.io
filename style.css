@@ -13,6 +13,28 @@ body {
   padding: 2rem 0;
 }
 
+/* Normal link */
+a {
+  color: #355E3B; /* your theme green */
+ /* removes underline */
+}
+
+/* Link when hovered */
+a:hover {
+  color: #4B7F52; /* darker green on hover */
+ /* underline only on hover */
+}
+
+/* Link already visited */
+a:visited {
+  color: #6B8F71; /* different color for visited links */
+}
+
+/* Link being clicked */
+a:active {
+  color: #FF6600; /* orange when active */
+}
+
 .experience ul {
   margin: 0 0 1.5rem 1.5rem; /* controls overall left indent */
   padding: 0;
