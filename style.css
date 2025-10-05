@@ -250,7 +250,7 @@ section h2 {
 /* --- Custom 1-Left / 2-Right Grid Layout --- */
 .robot-layout {
   display: grid;
-  grid-template-columns: 2fr 1fr;     /* left column wider */
+  grid-template-columns: 1fr 1fr;     /* left column wider */
   grid-template-rows: 1fr 1fr;
   gap: 1rem;
   align-items: stretch;
