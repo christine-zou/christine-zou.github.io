@@ -264,22 +264,26 @@ section h2 {
   border: 0;
 }
 
-.video-container.vertical {
+.video-mask {
   position: relative;
   width: 100%;
-  max-width: 450px;
-  padding-bottom: 177.78%; /* for 9:16 videos */
-  height: 0;
+  max-width: 480px;  /* or whatever fits your layout */
+  height: 854px;      /* match desired video height (vertical ratio) */
   overflow: hidden;
-  border-radius: 8px;
+  margin: 0 auto;
 }
-.video-container.vertical iframe {
+
+.video-mask iframe {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) scale(1.1);  /* center + scale to hide edges */
+  /* width and height based on ratio — drive will fill accordingly */
   height: 100%;
+  width: auto;
   border: 0;
 }
+
 
 /* =============================
    RESEARCH PAGE (Accordion)
