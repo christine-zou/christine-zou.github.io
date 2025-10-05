@@ -251,7 +251,7 @@ section h2 {
 .robot-layout {
   display: flex;
   gap: 1rem;
-  align-items: flex-start;
+  align-items: center; /* centers children vertically! */
 }
 
 /* Left column (main image) */
@@ -259,7 +259,7 @@ section h2 {
   flex: 1 1 50%;
   display: flex;
   justify-content: center;
-  align-items: center; /* centers vertically */
+  align-items: center;
   position: relative;
 }
 
@@ -268,7 +268,7 @@ section h2 {
   height: auto;
   border-radius: 8px;
   display: block;
-  object-fit: contain; /* ensures no cropping */
+  object-fit: contain;
 }
 
 /* Right column (two stacked images) */
@@ -278,6 +278,7 @@ section h2 {
   flex-direction: column;
   justify-content: space-between;
   gap: 1rem;
+  height: 100%;
 }
 
 .robot-layout .right-column .image-container {
@@ -317,9 +318,9 @@ section h2 {
 @media (max-width: 768px) {
   .robot-layout {
     flex-direction: column;
+    align-items: stretch;
   }
 }
-
 
 .video-container {
   position: relative;
