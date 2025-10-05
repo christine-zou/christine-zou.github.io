@@ -249,18 +249,17 @@ section h2 {
 
 /* --- Custom 1-Left / 2-Right Grid Layout --- */
 .robot-layout {
-  display: grid;
-  grid-template-columns: auto auto;     
+  display: flex;    
   gap: 1rem;
   align-items: stretch;
 }
 
 /* Right column is a flex container stacking two proportional images */
 .robot-layout .right-column {
+  flex: 1 1 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
   gap: 1rem;
 }
 
@@ -269,30 +268,32 @@ section h2 {
   position: relative;
   flex: 1 1 auto;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
 }
 
 .robot-layout .right-column img {
   width: 100%;
-  height: auto;
+  height: 100%;
   border-radius: 8px;
-  display: block;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 /* Maintain proportional height to left image */
 .robot-layout .large img {
   width: 100%;
-  height: auto;              /* natural height defines section height */
+  height: 100%;
+  object-fit: cover; /* fill space evenly, no distortion */
   border-radius: 8px;
   display: block;
 }
 /* Image placement */
-/*.robot-layout .large {
-  grid-row: 1 / span 2;               
-  grid-column: 1;
-}*/
+.robot-layout .large {
+  flex: 1 1 50%;
+  display: flex;
+  align-items: stretch;
+}
+}
 
 /*.robot-layout .top-right {
   grid-row: 1;
