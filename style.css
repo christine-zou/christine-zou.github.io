@@ -150,20 +150,21 @@ section h2 {
 
 .experience ul {
   list-style: none;         /* remove default bullets */
-  margin: 0 0 1rem 1.5rem;
+  margin: 0 0 1rem 0;
   padding: 0;
 }
 
 .experience li {
   position: relative;
-  padding-left: 1.2rem;     /* space for the custom bullet */
+  padding-left: 0.9rem;     /* space for the custom bullet */
   margin-bottom: 0.6rem;
   line-height: 1.6;
+  text-indent: 0;
 }
 
 /* Custom sideways triangle bullet */
 .experience li::before {
-  content: "▸";             /* triangle symbol */
+  content: "▶";             /* triangle symbol */
   position: absolute;
   left: 0;
   top: 0.1rem;
