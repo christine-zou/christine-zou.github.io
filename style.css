@@ -247,69 +247,57 @@ section h2 {
 }
 .image-row .image-container:hover .caption { opacity: 1; }
 
-/* --- Left image defines total height, right column matches --- */
+/* --- Left image drives height; right column scales proportionally --- */
 .robot-layout {
   display: flex;
-  align-items: flex-start;
   gap: 1rem;
+  align-items: flex-start;
 }
 
-/* Left column (drives height) */
+/* Left side defines the overall height */
 .robot-layout .large {
   flex: 1 1 50%;
+  position: relative;
 }
 
 .robot-layout .large img {
   width: 100%;
-  height: auto;
+  height: auto; /* natural ratio defines height */
   display: block;
   border-radius: 8px;
 }
 
-/* Right column constrained to left image height */
+/* Right column matches left height and scales its children */
 .robot-layout .right-column {
   flex: 1 1 50%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 1rem;
+  height: 100%;
+  position: relative;
+}
 
-  /* Match height of left image */
-  height: auto;
+/* Allow each right image to scale by aspect ratio */
+.robot-layout .right-column .image-container {
+  position: relative;
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .robot-layout .right-column img {
   width: 100%;
   height: auto;
-  display: block;
   border-radius: 8px;
-  object-fit: cover;
-}
-
-/* Match right column height to left image dynamically */
-.robot-layout {
-  align-items: stretch;
-}
-.robot-layout .right-column {
-  height: auto;
-}
-.robot-layout .large img {
   display: block;
-  aspect-ratio: auto;
+  object-fit: contain;
+  aspect-ratio: attr(width) / attr(height); /* modern browsers use this to respect aspect ratio */
 }
 
-/* Force both columns to be equal height based on left image */
-.robot-layout > * {
-  display: flex;
-  flex-direction: column;
-}
-
-.robot-layout .large,
-.robot-layout .right-column {
-  align-self: stretch;
-}
-
-/* Captions */
+/* Captions restored */
 .robot-layout .caption {
   position: absolute;
   bottom: 0; left: 0; right: 0;
@@ -321,7 +309,9 @@ section h2 {
   opacity: 0;
   transition: opacity 0.3s ease;
   border-radius: 0 0 8px 8px;
+  z-index: 2;
 }
+
 .robot-layout .image-container:hover .caption {
   opacity: 1;
 }
@@ -330,6 +320,10 @@ section h2 {
 @media (max-width: 768px) {
   .robot-layout {
     flex-direction: column;
+  }
+  .robot-layout .right-column {
+    flex-direction: column;
+    height: auto;
   }
 }
 
