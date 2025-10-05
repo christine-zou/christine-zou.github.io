@@ -247,14 +247,26 @@ section h2 {
 }
 .image-row .image-container:hover .caption { opacity: 1; }
 
-/* --- Custom 1-Left / 2-Right Grid Layout --- */
+/* --- Equal-height layout, left image defines height --- */
 .robot-layout {
-  display: flex;    
-  gap: 1rem;
+  display: flex;
   align-items: stretch;
+  gap: 1rem;
 }
 
-/* Right column is a flex container stacking two proportional images */
+/* Left column drives layout height */
+.robot-layout .large {
+  flex: 1 1 50%;
+}
+
+.robot-layout .large img {
+  width: 100%;
+  height: auto;             /* natural aspect ratio defines height */
+  border-radius: 8px;
+  display: block;
+}
+
+/* Right column adapts to match left column height */
 .robot-layout .right-column {
   flex: 1 1 50%;
   display: flex;
@@ -263,74 +275,28 @@ section h2 {
   gap: 1rem;
 }
 
-/* Maintain each image's natural aspect ratio */
+/* Calculate proportional sizing with aspect ratio */
 .robot-layout .right-column .image-container {
   position: relative;
+  width: 100%;
   flex: 1 1 auto;
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
 }
 
 .robot-layout .right-column img {
   width: 100%;
-  height: 100%;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-/* Maintain proportional height to left image */
-.robot-layout .large img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* fill space evenly, no distortion */
-  border-radius: 8px;
-  display: block;
-}
-/* Image placement */
-.robot-layout .large {
-  flex: 1 1 50%;
-  display: flex;
-  align-items: stretch;
-}
-}
-
-/*.robot-layout .top-right {
-  grid-row: 1;
-  grid-column: 2;
-}
-
-.robot-layout .bottom-right {
-  grid-row: 2;
-  grid-column: 2;
-}*/
-
-
-/* Let right images fill available space proportionally */
-/*.robot-layout .top-right img,
-.robot-layout .bottom-right img {
-  width: 100%;
-  height: auto;               
-  object-fit: contain;
-  border-radius: 8px;
-  display: block;
-}*/
-
-/* General image styling */
-/*.robot-layout .image-container {
-  position: relative;
-  width: 100%;
   height: auto;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-}*/
+  border-radius: 8px;
+  display: block;
+  object-fit: contain;
+}
 
-/* Hover caption */
+/* Captions */
 .robot-layout .caption {
   position: absolute;
-  bottom: 0; left: 0; right: 0;
-  background: rgba(0,0,0,0.7);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
   color: #fff;
   padding: 0.5rem;
   text-align: center;
@@ -347,16 +313,10 @@ section h2 {
 /* Responsive stacking */
 @media (max-width: 768px) {
   .robot-layout {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-  .robot-layout .large,
-  .robot-layout .top-right,
-  .robot-layout .bottom-right {
-    grid-column: auto;
-    grid-row: auto;
+    flex-direction: column;
   }
 }
+
 
 .video-container {
   position: relative;
