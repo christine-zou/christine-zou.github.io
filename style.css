@@ -250,8 +250,7 @@ section h2 {
 /* --- Custom 1-Left / 2-Right Grid Layout --- */
 .robot-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;     /* left column wider */
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;     
   gap: 1rem;
   align-items: stretch;
 }
@@ -271,20 +270,29 @@ section h2 {
   grid-row: 2;
   grid-column: 2;
 }
+/* Maintain proportional height to left image */
+.robot-layout .large img {
+  width: 100%;
+  height: auto;              /* natural height defines section height */
+  border-radius: 8px;
+  display: block;
+}
+
+/* Let right images fill available space proportionally */
+.robot-layout .top-right img,
+.robot-layout .bottom-right img {
+  width: 100%;
+  height: 50%;               /* each fills half the column */
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
 
 /* General image styling */
 .robot-layout .image-container {
   position: relative;
   width: 100%;
   height: 100%;
-}
-
-.robot-layout img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-  display: block;
 }
 
 /* Hover caption */
