@@ -156,7 +156,7 @@ section h2 {
 
 .experience li {
   position: relative;
-  padding-left: 0.9rem;     /* space for the custom bullet */
+  padding-left: 1rem;     /* space for the custom bullet */
   margin-bottom: 0.6rem;
   line-height: 1.6;
   text-indent: 0;
@@ -167,7 +167,8 @@ section h2 {
   content: "▶";             /* triangle symbol */
   position: absolute;
   left: 0;
-  top: 0.1rem;
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 0.7rem;        /* slightly smaller than default bullet */
   opacity: 0.8;             /* softens visual impact */
 }
