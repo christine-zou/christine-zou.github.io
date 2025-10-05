@@ -149,18 +149,28 @@ section h2 {
 }
 
 .experience ul {
-  list-style-position: outside;
+  list-style: none;         /* remove default bullets */
   margin: 0 0 1rem 1.5rem;
   padding: 0;
 }
 
 .experience li {
-  margin-bottom: 0.5rem;
-  padding-left: 0.5rem;   /* spacing between bullet and text */
-  text-indent: 0;         /* keeps wrapped lines aligned with the first */
+  position: relative;
+  padding-left: 1.2rem;     /* space for the custom bullet */
+  margin-bottom: 0.6rem;
   line-height: 1.6;
-  display: list-item;     /* ensures proper bullet behavior */
 }
+
+/* Custom sideways triangle bullet */
+.experience li::before {
+  content: "▸";             /* triangle symbol */
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  font-size: 0.7rem;        /* slightly smaller than default bullet */
+  opacity: 0.8;             /* softens visual impact */
+}
+
 
 /* =============================
    PROJECTS PAGE
