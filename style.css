@@ -283,6 +283,27 @@ section h2 {
   border: 0;
 }
 
+/* Full-page video display inside project-full */
+.project-full .video-container.vertical {
+  position: relative;
+  width: 100%;            /* spans full page width */
+  max-width: none;        /* remove any fixed width cap */
+  height: 100vh;          /* fills entire visible page height */
+  padding-bottom: 0;      /* remove ratio padding */
+  overflow: hidden;
+  border-radius: 0;
+  margin: 0;
+}
+
+.project-full .video-container.vertical iframe {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: auto;            /* maintain true ratio */
+  min-width: 100%;        /* fill width if possible */
+  border: 0;
+}
 
 /* =============================
    RESEARCH PAGE (Accordion)
