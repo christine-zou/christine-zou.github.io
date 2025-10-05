@@ -247,6 +247,61 @@ section h2 {
 }
 .image-row .image-container:hover .caption { opacity: 1; }
 
+/* --- Smart Responsive Gallery (Masonry style) --- */
+.smart-gallery {
+  column-count: 3;        /* Number of columns */
+  column-gap: 1rem;       /* Space between columns */
+  margin-top: 1rem;
+}
+
+.smart-gallery .image-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.smart-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.smart-gallery img:hover {
+  transform: scale(1.03);
+}
+
+/* Hover caption styling */
+.smart-gallery .caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 0 0 8px 8px;
+}
+
+.smart-gallery .image-container:hover .caption {
+  opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .smart-gallery { column-count: 2; }
+}
+@media (max-width: 600px) {
+  .smart-gallery { column-count: 1; }
+}
+
+
 .video-container {
   position: relative;
   width: 100%;
