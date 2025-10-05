@@ -167,8 +167,7 @@ section h2 {
   content: "▶";             /* triangle symbol */
   position: absolute;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0.35em;
   font-size: 0.7rem;        /* slightly smaller than default bullet */
   opacity: 0.8;             /* softens visual impact */
 }
