@@ -268,10 +268,11 @@ section h2 {
   position: relative;
   width: 100%;
   max-width: 450px;         /* typical phone width */
-  padding-bottom: 177.78%;  /* 9:16 aspect ratio */
+  padding-bottom: 177.78%;
   height: 0;
   overflow: hidden;
   border-radius: 8px;
+  margin: 0 auto;
 }
 
 .video-container.vertical iframe {
