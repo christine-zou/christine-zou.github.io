@@ -250,26 +250,37 @@ section h2 {
 /* --- Custom 1-Left / 2-Right Grid Layout --- */
 .robot-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;     
+  grid-template-columns: auto auto;     
   gap: 1rem;
   align-items: stretch;
 }
 
-/* Image placement */
-.robot-layout .large {
-  grid-row: 1 / span 2;               /* spans both rows */
-  grid-column: 1;
+/* Right column is a flex container stacking two proportional images */
+.robot-layout .right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 1rem;
 }
 
-.robot-layout .top-right {
-  grid-row: 1;
-  grid-column: 2;
+/* Maintain each image's natural aspect ratio */
+.robot-layout .right-column .image-container {
+  position: relative;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.robot-layout .bottom-right {
-  grid-row: 2;
-  grid-column: 2;
+.robot-layout .right-column img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  object-fit: contain;
 }
+
 /* Maintain proportional height to left image */
 .robot-layout .large img {
   width: 100%;
@@ -277,26 +288,42 @@ section h2 {
   border-radius: 8px;
   display: block;
 }
+/* Image placement */
+/*.robot-layout .large {
+  grid-row: 1 / span 2;               
+  grid-column: 1;
+}*/
+
+/*.robot-layout .top-right {
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.robot-layout .bottom-right {
+  grid-row: 2;
+  grid-column: 2;
+}*/
+
 
 /* Let right images fill available space proportionally */
-.robot-layout .top-right img,
+/*.robot-layout .top-right img,
 .robot-layout .bottom-right img {
   width: 100%;
   height: auto;               
   object-fit: contain;
   border-radius: 8px;
   display: block;
-}
+}*/
 
 /* General image styling */
-.robot-layout .image-container {
+/*.robot-layout .image-container {
   position: relative;
   width: 100%;
   height: auto;
    display: flex;
    align-items: center;
    justify-content: center;
-}
+}*/
 
 /* Hover caption */
 .robot-layout .caption {
