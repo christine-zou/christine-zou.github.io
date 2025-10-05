@@ -148,6 +148,24 @@ section h2 {
   .exp-row { flex-direction: column; }
 }
 
+/* Experience list formatting */
+.experience ul {
+  list-style-position: outside;     /* keeps bullet outside the text block */
+  margin-left: 1.5rem;              /* space before bullets */
+  padding-left: 0;                  /* prevents double indentation */
+}
+
+.experience li {
+  margin-bottom: 0.5rem;
+  text-indent: -0.75rem;            /* brings first line back to align bullet */
+  padding-left: 1.5rem;             /* indents text after bullet */
+  line-height: 1.6;
+}
+
+.experience li::marker {
+  color: #355E3B;                   /* optional: match your theme color */
+}
+
 /* =============================
    PROJECTS PAGE
 ============================= */
