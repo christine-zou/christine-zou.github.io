@@ -247,56 +247,73 @@ section h2 {
 }
 .image-row .image-container:hover .caption { opacity: 1; }
 
-/* --- Equal-height layout, left image defines height --- */
+/* --- Left image defines total height, right column matches --- */
 .robot-layout {
   display: flex;
-  align-items: stretch;
+  align-items: flex-start;
   gap: 1rem;
 }
 
-/* Left column drives layout height */
+/* Left column (drives height) */
 .robot-layout .large {
   flex: 1 1 50%;
 }
 
 .robot-layout .large img {
   width: 100%;
-  height: auto;             /* natural aspect ratio defines height */
-  border-radius: 8px;
+  height: auto;
   display: block;
+  border-radius: 8px;
 }
 
-/* Right column adapts to match left column height */
+/* Right column constrained to left image height */
 .robot-layout .right-column {
   flex: 1 1 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 1rem;
-}
 
-/* Calculate proportional sizing with aspect ratio */
-.robot-layout .right-column .image-container {
-  position: relative;
-  width: 100%;
-  flex: 1 1 auto;
+  /* Match height of left image */
+  height: auto;
 }
 
 .robot-layout .right-column img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
   display: block;
-  object-fit: contain;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Match right column height to left image dynamically */
+.robot-layout {
+  align-items: stretch;
+}
+.robot-layout .right-column {
+  height: auto;
+}
+.robot-layout .large img {
+  display: block;
+  aspect-ratio: auto;
+}
+
+/* Force both columns to be equal height based on left image */
+.robot-layout > * {
+  display: flex;
+  flex-direction: column;
+}
+
+.robot-layout .large,
+.robot-layout .right-column {
+  align-self: stretch;
 }
 
 /* Captions */
 .robot-layout .caption {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.7);
+  bottom: 0; left: 0; right: 0;
+  background: rgba(0,0,0,0.7);
   color: #fff;
   padding: 0.5rem;
   text-align: center;
@@ -305,7 +322,6 @@ section h2 {
   transition: opacity 0.3s ease;
   border-radius: 0 0 8px 8px;
 }
-
 .robot-layout .image-container:hover .caption {
   opacity: 1;
 }
@@ -316,7 +332,6 @@ section h2 {
     flex-direction: column;
   }
 }
-
 
 .video-container {
   position: relative;
