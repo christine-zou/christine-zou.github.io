@@ -499,9 +499,30 @@ section h2 {
 ============================= */
 footer {
   text-align: center;
-  padding: 2rem 0;
+  padding: 2rem 0 1.5rem 0;
   background: white;
   border-top: 1px solid #ddd;
   margin-top: 4rem;
 }
+
+footer p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+  color: #444;
+  letter-spacing: 0.3px;
+}
+
+footer a {
+  color: #355E3B; /* your theme green */
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 0.4rem;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #4B7F52; /* lighter green on hover */
+  text-decoration: underline;
+}
+
 
