@@ -76,6 +76,37 @@ header {
   font-weight: 600;
   transition: color 0.2s ease;
 }
+/* Hamburger menu styling */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animate into "X" when active */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
 
 /* =============================
    HERO
@@ -534,20 +565,16 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* --- Responsive Header --- */
-.menu-toggle {
-  display: none;
-  font-size: 1.8rem;
-  color: white;
-  cursor: pointer;
-}
 
-/* Hide navigation on small screens by default */
 @media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
   .site-nav {
     display: none;
     flex-direction: column;
-    background-color: #355E3B; /* same as header color */
+    background-color: #355E3B;
     position: absolute;
     top: 100%;
     right: 0;
@@ -556,25 +583,8 @@ footer a:hover {
     padding: 1rem 0;
   }
 
-  .site-nav a {
-    display: block;
-    margin: 0.8rem 0;
-    font-size: 1.1rem;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-
-  /* When nav is active */
   .site-nav.active {
     display: flex;
   }
-
-  /* Make title and menu icon space apart */
-  .nav-container {
-    justify-content: space-between;
-  }
 }
-
 
