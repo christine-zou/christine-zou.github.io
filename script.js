@@ -69,8 +69,12 @@ document.addEventListener("DOMContentLoaded", function() {
           const otherChevron = other.querySelector(".chevron");
           other.classList.remove("active");
           if (otherPanel) {
-            otherPanel.style.maxHeight = "0px";
-            otherPanel.style.opacity = 0;
+            // Smoothly collapse before hiding
+            otherPanel.style.maxHeight = otherPanel.scrollHeight + "px";
+            requestAnimationFrame(() => {
+              otherPanel.style.maxHeight = "0px";
+              otherPanel.style.opacity = 0;
+            });
           }
           if (otherChevron) otherChevron.style.transform = "rotate(0deg)";
         }
@@ -78,22 +82,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // Toggle this one
       if (isActive) {
+        // Smoothly close
         acc.classList.remove("active");
-        panel.style.maxHeight = "0px";
-        panel.style.opacity = 0;
+        panel.style.maxHeight = panel.scrollHeight + "px"; // ensure current height
+        requestAnimationFrame(() => {
+          panel.style.maxHeight = "0px";
+          panel.style.opacity = 0;
+        });
         if (chevron) chevron.style.transform = "rotate(0deg)";
       } else {
+        // Smoothly open
         acc.classList.add("active");
         panel.style.opacity = 1;
-        // Dynamically expand to fit full content (including PDF iframe)
         panel.style.maxHeight = panel.scrollHeight + "px";
         if (chevron) chevron.style.transform = "rotate(180deg)";
       }
     });
   });
 });
-
-
 
 // --- Responsive header menu toggle ---
 document.addEventListener("DOMContentLoaded", () => {
