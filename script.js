@@ -42,47 +42,47 @@ function showSlides(n) {
 document.addEventListener("DOMContentLoaded", function() {
   const accordions = document.querySelectorAll(".accordion");
 
+  // Ensure all panels start closed
+  accordions.forEach(acc => {
+    const panel = acc.nextElementSibling;
+    const chevron = acc.querySelector(".chevron");
+    acc.classList.remove("active");
+    if (panel) {
+      panel.style.display = "none";
+      panel.style.opacity = 0;
+    }
+    if (chevron) chevron.style.transform = "rotate(0deg)";
+  });
+
   accordions.forEach(acc => {
     acc.addEventListener("click", function() {
-      // Close all other panels first
+      const isActive = acc.classList.contains("active");
+      const panel = acc.nextElementSibling;
+      const chevron = acc.querySelector(".chevron");
+
+      // Close all panels first
       accordions.forEach(other => {
-        if (other !== acc) {
-          other.classList.remove("active");
-          const otherPanel = other.nextElementSibling;
-          const otherChevron = other.querySelector(".chevron");
-          if (otherPanel) {
-            otherPanel.style.display = "none";
-            otherPanel.style.paddingTop = "0";
-            otherPanel.style.paddingBottom = "0";
-          }
-          if (otherChevron) otherChevron.style.transform = "rotate(0deg)";
+        const otherPanel = other.nextElementSibling;
+        const otherChevron = other.querySelector(".chevron");
+        other.classList.remove("active");
+        if (otherPanel) {
+          otherPanel.style.display = "none";
+          otherPanel.style.opacity = 0;
         }
+        if (otherChevron) otherChevron.style.transform = "rotate(0deg)";
       });
 
-      // Toggle the clicked panel
-      const panel = this.nextElementSibling;
-      const chevron = this.querySelector(".chevron");
-      const isActive = this.classList.contains("active");
-
-      if (isActive) {
-        // Close
-        this.classList.remove("active");
-        panel.style.display = "none";
-        panel.style.paddingTop = "0";
-        panel.style.paddingBottom = "0";
-        if (chevron) chevron.style.transform = "rotate(0deg)";
-      } else {
-        // Open fully (no scroll restriction)
-        this.classList.add("active");
+      // Open the clicked one (only if it was closed)
+      if (!isActive) {
+        acc.classList.add("active");
         panel.style.display = "block";
-        panel.style.paddingTop = "1rem";
-        panel.style.paddingBottom = "1rem";
-        panel.style.maxHeight = "none";  // allow full height
+        setTimeout(() => (panel.style.opacity = 1), 50);
         if (chevron) chevron.style.transform = "rotate(180deg)";
       }
     });
   });
 });
+
 
 // --- Responsive header menu toggle ---
 document.addEventListener("DOMContentLoaded", () => {
