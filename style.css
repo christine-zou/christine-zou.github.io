@@ -684,33 +684,32 @@ footer a:hover {
 
     /* Stack rows cleanly */
   .exp-row {
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 0rem;         /* less vertical gap between elements */
-    /*margin-bottom: 1.5rem;*/
+    align-items: stretch;     /* ensures children fill width, not center float */
+    gap: 0.4rem;              /* small, consistent spacing between elements */
   }
 
   /* Center and resize text for better readability */
   .exp-text {
-    flex: 1 1 auto;
-    text-align: left;
-    padding: 0 0rem;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-top: 0;
+    margin: 0.2rem 0 0 0;
+    padding: 0;
   }
 
   /* Scale down images so they fit neatly above/below text */
   .exp-media {
-    width: 90%;
-    margin-bottom: 0;
-  }
-
-  .exp-media img {
     width: 100%;
+    margin: 0;
+    padding: 0;
+    line-height: 0;           /* remove baseline space */
+  }
+  .exp-media img {
     display: block;
-    margin: 0 auto;
-    /*border-radius: 6px;*/
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
   }
    
 
