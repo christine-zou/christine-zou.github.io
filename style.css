@@ -283,19 +283,17 @@ section h2 {
 
 /* Custom sideways triangle bullet */
 .experience li::before {
-  content: "▶";             /* triangle symbol */
+  content: "";
   position: absolute;
   left: 0;
-  top: 0.35em;
-  font-size: 0.7rem;        /* slightly smaller than default bullet */
-  opacity: 0.8;             /* softens visual impact */
-  color: #333;              /* ensures consistent rendering */
-  font-family: 'Open Sans', sans-serif; /* force non-emoji font */
-  font-weight: 700;         /* make it sharp and geometric */
-  line-height: 1;
-  display: inline-block;
-  transform: translateY(-1px);
+  top: 0.6em;
+  width: 0;
+  height: 0;
+  border-left: 6px solid #355E3B;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
 }
+
 
 
 /* =============================
