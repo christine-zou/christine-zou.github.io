@@ -294,6 +294,7 @@ section h2 {
   font-weight: 700;         /* make it sharp and geometric */
   line-height: 1;
   display: inline-block;
+  transform: translateY(-1px);
 }
 
 
