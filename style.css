@@ -708,13 +708,9 @@ footer a:hover {
   .exp-media img {
     width: 100%;
     height: auto;
-    border-radius: 6px;
+    /*border-radius: 6px;*/
   }
    
-   .exp-media img[src$=".svg"] {
-       width: 70%;  /* smaller and centered nicely on mobile */
-       transform: translateY(-3%);
-     }
 
   /* Tighten overall vertical spacing */
   .exp-block {
