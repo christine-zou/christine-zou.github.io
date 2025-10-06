@@ -515,24 +515,24 @@ section h2 {
 
 .panel {
   opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: opacity 0.4s ease, max-height 0.5s ease;
+  display: none;
+  overflow: visible;
   background-color: #f9f9f9;
   border-left: 3px solid #355E3B;
   border-radius: 0 0 5px 5px;
   margin-bottom: 1rem;
   padding: 0 1rem;
+  transition: opacity 0.4s ease;
+}
+
+.accordion.active + .panel {
+  display: block;
+  opacity: 1;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .panel p { margin: 1rem 0; line-height: 1.6; }
-
-.accordion.active + .panel {
-  opacity: 1;
-  max-height: 2000px;  /* large enough to fit PDFs fully */
-  padding: 1rem;
-  overflow: visible;
-}
 
 .pptx-container {
   text-align: center;
