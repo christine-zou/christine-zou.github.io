@@ -514,15 +514,16 @@ section h2 {
 .accordion.active .chevron { transform: rotate(180deg); }
 
 .panel {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease-out;
+  overflow: visible; /* let the iframe expand freely */
+  max-height: none;  /* remove artificial height limit */
+  transition: all 0.4s ease-out;
   background-color: #f9f9f9;
   border-left: 3px solid #355E3B;
   border-radius: 0 0 5px 5px;
   margin-bottom: 1rem;
-  padding: 0 1rem;
+  padding: 0 1rem 1rem 1rem;
 }
+
 .panel p { margin: 1rem 0; line-height: 1.6; }
 
 .pptx-container {
@@ -536,19 +537,17 @@ section h2 {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-/* PDF container */
+/* PDF container + iframe */
 .pdf-container {
   width: 100%;
   margin: 1rem 0;
 }
 
-/* PDF iframe — adjust this height to your content */
 .pdf-frame {
   width: 100%;
-  height: 85vh;  /* fills ~85% of viewport height */
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  height: 100vh; /* full viewport height */
+  border: none;
+  display: block;
 }
 
 /* =============================
