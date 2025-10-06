@@ -89,6 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (menuToggle && siteNav) {
     menuToggle.addEventListener("click", () => {
       siteNav.classList.toggle("active");
+      menuToggle.classList.toggle("active"); // add animation toggle
     });
   }
 });
