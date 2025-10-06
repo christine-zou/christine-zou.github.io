@@ -44,37 +44,40 @@ document.addEventListener("DOMContentLoaded", function() {
 
   accordions.forEach(acc => {
     acc.addEventListener("click", function() {
-      // Close all panels first
+      // Close all other panels first
       accordions.forEach(other => {
         if (other !== acc) {
           other.classList.remove("active");
-          let otherPanel = other.nextElementSibling;
-          let otherChevron = other.querySelector(".chevron");
+          const otherPanel = other.nextElementSibling;
+          const otherChevron = other.querySelector(".chevron");
           if (otherPanel) {
-            otherPanel.style.maxHeight = null;
+            otherPanel.style.display = "none";
             otherPanel.style.paddingTop = "0";
             otherPanel.style.paddingBottom = "0";
           }
-          if (otherChevron) {
-            otherChevron.style.transform = "rotate(0deg)";
-          }
+          if (otherChevron) otherChevron.style.transform = "rotate(0deg)";
         }
       });
 
       // Toggle the clicked panel
-      this.classList.toggle("active");
-      let panel = this.nextElementSibling;
-      let chevron = this.querySelector(".chevron");
+      const panel = this.nextElementSibling;
+      const chevron = this.querySelector(".chevron");
+      const isActive = this.classList.contains("active");
 
-      if (panel.style.maxHeight) {
-        panel.style.maxHeight = null; // close
+      if (isActive) {
+        // Close
+        this.classList.remove("active");
+        panel.style.display = "none";
         panel.style.paddingTop = "0";
         panel.style.paddingBottom = "0";
         if (chevron) chevron.style.transform = "rotate(0deg)";
       } else {
-        panel.style.maxHeight = panel.scrollHeight + "px"; // open
+        // Open fully (no scroll restriction)
+        this.classList.add("active");
+        panel.style.display = "block";
         panel.style.paddingTop = "1rem";
         panel.style.paddingBottom = "1rem";
+        panel.style.maxHeight = "none";  // allow full height
         if (chevron) chevron.style.transform = "rotate(180deg)";
       }
     });
