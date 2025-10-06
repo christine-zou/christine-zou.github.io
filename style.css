@@ -187,6 +187,23 @@ header {
   margin-bottom: .75rem
 }
 
+.welcome-text {
+  font-size: 1.3rem;           /* slightly larger than normal text */
+  font-weight: 600;
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #333;
+  font-family: 'Playfair Display', serif;
+}
+
+.intro-small {
+  font-size: 0.95rem;          /* smaller, more body-text style */
+  line-height: 1.6;
+  text-align: center;
+  max-width: 700px;
+  margin: 0.75rem auto;        /* tighter spacing */
+  color: #444;
+}
 
 /* =============================
    SECTION HEADINGS
