@@ -500,20 +500,29 @@ section h2 {
 footer {
   text-align: center;
   padding: 2rem 0 1.5rem 0;
-  background: white;
-  border-top: 1px solid #ddd;
+  background-color: #E6EFE8; /* soft light green tint */
+  border-top: 2px solid #355E3B; /* match theme accent */
   margin-top: 4rem;
+}
+
+footer h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #355E3B;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.5px;
 }
 
 footer p {
   margin: 0.3rem 0;
   font-size: 0.95rem;
-  color: #444;
+  color: #333;
   letter-spacing: 0.3px;
 }
 
 footer a {
-  color: #355E3B; /* your theme green */
+  color: #355E3B;
   text-decoration: none;
   font-weight: 500;
   margin: 0 0.4rem;
@@ -521,8 +530,9 @@ footer a {
 }
 
 footer a:hover {
-  color: #4B7F52; /* lighter green on hover */
+  color: #4B7F52; /* slightly darker green on hover */
   text-decoration: underline;
 }
+
 
 
