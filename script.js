@@ -42,7 +42,7 @@ function showSlides(n) {
 document.addEventListener("DOMContentLoaded", function() {
   const accordions = document.querySelectorAll(".accordion");
 
-  // Ensure all panels start closed
+  // Initialize all panels as closed
   accordions.forEach(acc => {
     const panel = acc.nextElementSibling;
     const chevron = acc.querySelector(".chevron");
@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (panel) {
       panel.style.display = "none";
       panel.style.opacity = 0;
+      panel.style.transition = "opacity 0.4s ease";
     }
     if (chevron) chevron.style.transform = "rotate(0deg)";
   });
@@ -60,20 +61,29 @@ document.addEventListener("DOMContentLoaded", function() {
       const panel = acc.nextElementSibling;
       const chevron = acc.querySelector(".chevron");
 
-      // Close all panels first
+      // Close all other panels
       accordions.forEach(other => {
-        const otherPanel = other.nextElementSibling;
-        const otherChevron = other.querySelector(".chevron");
-        other.classList.remove("active");
-        if (otherPanel) {
-          otherPanel.style.display = "none";
-          otherPanel.style.opacity = 0;
+        if (other !== acc) {
+          other.classList.remove("active");
+          const otherPanel = other.nextElementSibling;
+          const otherChevron = other.querySelector(".chevron");
+          if (otherPanel) {
+            otherPanel.style.opacity = 0;
+            setTimeout(() => (otherPanel.style.display = "none"), 400);
+          }
+          if (otherChevron) otherChevron.style.transform = "rotate(0deg)";
         }
-        if (otherChevron) otherChevron.style.transform = "rotate(0deg)";
       });
 
-      // Open the clicked one (only if it was closed)
-      if (!isActive) {
+      // Toggle this one
+      if (isActive) {
+        // Fade out and close
+        acc.classList.remove("active");
+        panel.style.opacity = 0;
+        setTimeout(() => (panel.style.display = "none"), 400);
+        if (chevron) chevron.style.transform = "rotate(0deg)";
+      } else {
+        // Open and fade in
         acc.classList.add("active");
         panel.style.display = "block";
         setTimeout(() => (panel.style.opacity = 1), 50);
