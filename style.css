@@ -294,6 +294,37 @@ section h2 {
   border-bottom: 4px solid transparent;
 }
 
+.exp-media .image-container {
+  position: relative;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.exp-media .image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.exp-media .caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 0 0 8px 8px;
+}
+
+.exp-media .image-container:hover .caption {
+  opacity: 1;
+}
 
 
 /* =============================
@@ -763,5 +794,6 @@ footer a:hover {
     border-radius: 4px;
     opacity: 1;                /* always visible on mobile */
   }
+
 }
 
