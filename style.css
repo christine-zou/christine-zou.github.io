@@ -745,6 +745,15 @@ footer a:hover {
     height: 8px;
     margin: 1.5rem 0;
   }
+  .pdf-container iframe {
+  height: 65vh;         /* shorter for smaller screens */
+  width: 100vw;         /* use full viewport width */
+  margin-left: -5vw;    /* slight offset to counter container padding */
+  }
+
+  .pdf-container {
+    overflow-x: hidden;   /* prevent horizontal scrollbars */
+  }
 }
 }
 
