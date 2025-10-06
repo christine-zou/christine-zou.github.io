@@ -160,8 +160,13 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.1rem;
+  gap: 0rem;
   margin-top: 0.5rem;
+}
+
+.hero-header h2 {
+  margin: 0.2rem 0 0.1rem 0;  /* drastically reduce top/bottom spacing */
+  line-height: 1.1;
 }
 
 .hero-subinfo {
