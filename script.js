@@ -42,34 +42,35 @@ function showSlides(n) {
 document.addEventListener("DOMContentLoaded", function() {
   const accordions = document.querySelectorAll(".accordion");
 
-  // Initialize all panels as closed
+  // Start all panels closed
   accordions.forEach(acc => {
     const panel = acc.nextElementSibling;
     const chevron = acc.querySelector(".chevron");
     acc.classList.remove("active");
     if (panel) {
-      panel.style.display = "none";
+      panel.style.maxHeight = "0px";
       panel.style.opacity = 0;
-      panel.style.transition = "opacity 0.4s ease";
+      panel.style.overflow = "hidden";
+      panel.style.transition = "max-height 0.6s ease, opacity 0.4s ease";
     }
     if (chevron) chevron.style.transform = "rotate(0deg)";
   });
 
   accordions.forEach(acc => {
     acc.addEventListener("click", function() {
-      const isActive = acc.classList.contains("active");
       const panel = acc.nextElementSibling;
       const chevron = acc.querySelector(".chevron");
+      const isActive = acc.classList.contains("active");
 
-      // Close all other panels
+      // Close others first
       accordions.forEach(other => {
         if (other !== acc) {
-          other.classList.remove("active");
           const otherPanel = other.nextElementSibling;
           const otherChevron = other.querySelector(".chevron");
+          other.classList.remove("active");
           if (otherPanel) {
+            otherPanel.style.maxHeight = "0px";
             otherPanel.style.opacity = 0;
-            setTimeout(() => (otherPanel.style.display = "none"), 400);
           }
           if (otherChevron) otherChevron.style.transform = "rotate(0deg)";
         }
@@ -77,21 +78,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // Toggle this one
       if (isActive) {
-        // Fade out and close
         acc.classList.remove("active");
+        panel.style.maxHeight = "0px";
         panel.style.opacity = 0;
-        setTimeout(() => (panel.style.display = "none"), 400);
         if (chevron) chevron.style.transform = "rotate(0deg)";
       } else {
-        // Open and fade in
         acc.classList.add("active");
-        panel.style.display = "block";
-        setTimeout(() => (panel.style.opacity = 1), 50);
+        panel.style.opacity = 1;
+        // Dynamically expand to fit full content (including PDF iframe)
+        panel.style.maxHeight = panel.scrollHeight + "px";
         if (chevron) chevron.style.transform = "rotate(180deg)";
       }
     });
   });
 });
+
 
 
 // --- Responsive header menu toggle ---
