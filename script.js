@@ -81,3 +81,14 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+// --- Responsive header menu toggle ---
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById("menu-toggle");
+  const siteNav = document.getElementById("site-nav");
+
+  if (menuToggle && siteNav) {
+    menuToggle.addEventListener("click", () => {
+      siteNav.classList.toggle("active");
+    });
+  }
+});
