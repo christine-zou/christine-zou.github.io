@@ -525,6 +525,28 @@ section h2 {
 }
 .panel p { margin: 1rem 0; line-height: 1.6; }
 
+.pptx-container {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.pptx-container iframe {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.pdf-container {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.pdf-container iframe {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
 /* =============================
    FOOTER
 ============================= */
