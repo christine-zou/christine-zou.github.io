@@ -156,6 +156,17 @@ header {
   text-decoration: underline;
 }
 
+.edu-badge {
+  display: inline-block;
+  background-color: rgba(53, 94, 59, 0.1); /* soft green tint */
+  color: #355E3B;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
 /* =============================
    SECTION HEADINGS
 ============================= */
