@@ -748,15 +748,20 @@ footer a:hover {
     height: 8px;
     margin: 1.5rem 0;
   }
-  .pdf-container iframe {
-  height: 65vh;         /* shorter for smaller screens */
-  width: 100vw;         /* use full viewport width */
-  margin-left: -5vw;    /* slight offset to counter container padding */
+  .clickable-pdf iframe {
+    height: 65vh;             /* slightly shorter for mobile screens */
   }
 
-  .pdf-container {
-    overflow-x: hidden;   /* prevent horizontal scrollbars */
+  .clickable-pdf::after {
+    content: "Tap to open full PDF";
+    bottom: 8px;
+    right: 8px;
+    background: rgba(53, 94, 59, 0.8); /* your theme green */
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    opacity: 1;                /* always visible on mobile */
   }
-}
 }
 
