@@ -686,7 +686,7 @@ footer a:hover {
   .exp-row {
     flex-direction: column;
     align-items: center;
-    gap: 1rem;         /* less vertical gap between elements */
+    gap: 0rem;         /* less vertical gap between elements */
     /*margin-bottom: 1.5rem;*/
   }
 
@@ -703,21 +703,21 @@ footer a:hover {
   /* Scale down images so they fit neatly above/below text */
   .exp-media {
     width: 90%;
-    margin: 0 auto;
+    margin-bottom: 0;
   }
 
   .exp-media img {
     width: 100%;
-    height: auto;
-    margin-bottom: 0;
+    display: block;
+    margin: 0 auto;
     /*border-radius: 6px;*/
   }
    
 
   /* Tighten overall vertical spacing */
   .exp-block {
-    margin-bottom: 2rem;
-    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: .75rem;
   }
 
   /* Smaller titles for better balance */
