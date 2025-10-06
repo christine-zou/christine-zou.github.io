@@ -677,5 +677,67 @@ footer a:hover {
   .site-nav.active {
     display: flex;
   }
+
+    /* Stack rows cleanly */
+  .exp-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;         /* less vertical gap between elements */
+    margin-bottom: 1.5rem;
+  }
+
+  /* Center and resize text for better readability */
+  .exp-text {
+    flex: 1 1 auto;
+    text-align: left;
+    padding: 0 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Scale down images so they fit neatly above/below text */
+  .exp-media {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .exp-media img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+  }
+
+  /* Tighten overall vertical spacing */
+  .exp-block {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  /* Smaller titles for better balance */
+  .exp-title h3 {
+    font-size: 1.3rem;
+  }
+
+  .exp-title h4 {
+    font-size: 1rem;
+    color: #444;
+  }
+
+  .exp-title .exp-date {
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  /* Reduce padding inside the container for mobile */
+  .experience .container {
+    padding: 1rem 0.5rem;
+  }
+
+  /* Keep separator but make thinner */
+  .exp-separator {
+    height: 8px;
+    margin: 1.5rem 0;
+  }
+}
 }
 
