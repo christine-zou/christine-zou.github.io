@@ -167,12 +167,11 @@ header {
   text-align: center;
   font-size: 1rem;
   color: #555;
-  font-weight: 500;
-  line-height: 1.2;
+
 }
 
 .hero-subinfo p {
-  margin: 0.1rem 0;       /* reduced spacing between lines */
+  margin: 0.1rem 0.1rem;       /* reduced spacing between lines */
 }
 
 .education {
