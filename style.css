@@ -156,20 +156,25 @@ header {
   text-decoration: underline;
 }
 
-.hero-icons {
+.hero-header {
   display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 0.5rem;
-  font-weight: 500;
-  color: #444;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
 }
 
-.icon-item {
-  display: flex;
-  align-items: center;
-  font-size: 0.95rem;
+.hero-subinfo {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
 }
+
+.education {
+  font-style: italic;
+  color: #6b8f71;
+  font-weight: 500;
+}
+
 
 /* =============================
    SECTION HEADINGS
