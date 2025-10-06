@@ -195,8 +195,8 @@ section h2 {
 .exp-title h4 { font-size: 1.2rem; margin: 0.3rem 0 0; font-weight: 500; color: #444; }
 .exp-title .exp-date { font-size: 1rem; color: #777; margin-top: 0.3rem; display: block; }
 
-.exp-block { margin-bottom: 3rem; padding-bottom: 3rem; }
-.exp-separator { width: 100%; height: 12px; background-color: #355E3B; margin: 3rem 0; }
+.exp-block { margin-bottom: 2rem; padding-bottom: 1.5rem; }
+.exp-separator { width: 100%; height: 12px; background-color: #355E3B; margin: 2rem 0; }
 
 .exp-row { display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 2rem; align-items: flex-start; }
 .exp-text { flex: 2 1 400px; line-height: 1.7; }
