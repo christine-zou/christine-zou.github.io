@@ -534,5 +534,47 @@ footer a:hover {
   text-decoration: underline;
 }
 
+/* --- Responsive Header --- */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Hide navigation on small screens by default */
+@media (max-width: 768px) {
+  .site-nav {
+    display: none;
+    flex-direction: column;
+    background-color: #355E3B; /* same as header color */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .site-nav a {
+    display: block;
+    margin: 0.8rem 0;
+    font-size: 1.1rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  /* When nav is active */
+  .site-nav.active {
+    display: flex;
+  }
+
+  /* Make title and menu icon space apart */
+  .nav-container {
+    justify-content: space-between;
+  }
+}
 
 
