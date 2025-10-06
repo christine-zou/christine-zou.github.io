@@ -499,18 +499,18 @@ section h2 {
 ============================= */
 footer {
   text-align: center;
-  padding: 1.2rem 0 1rem 0;     /* reduced height */
-  background-color: #ffffff;    /* white background */
-  border-top: 2px solid #355E3B;/* green accent line */
-  margin-top: 3rem;
+  padding: 0.8rem 0 0.6rem 0; /* less white space */
+  background-color: #ffffff;
+  border-top: 2px solid #355E3B; /* green accent line */
+  margin-top: 2.5rem;
 }
 
 footer h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #355E3B;
-  margin-bottom: 0.4rem;        /* tighter spacing */
+  margin: 0 0 0.3rem 0; /* minimal space above/below */
   letter-spacing: 0.4px;
 }
 
@@ -522,7 +522,7 @@ footer p {
 }
 
 footer a {
-  color: #355E3B;               /* theme green */
+  color: #355E3B;
   text-decoration: none;
   font-weight: 500;
   margin: 0 0.4rem;
@@ -530,8 +530,9 @@ footer a {
 }
 
 footer a:hover {
-  color: #4B7F52;               /* lighter green on hover */
+  color: #4B7F52;
   text-decoration: underline;
 }
+
 
 
