@@ -710,6 +710,15 @@ footer a:hover {
     height: auto;
     border-radius: 6px;
   }
+   
+   .exp-media img {
+     display: block;           /* removes baseline gap */
+     width: 100%;
+     height: auto;
+     border-radius: 6px;
+     margin: 0 auto;
+     vertical-align: middle;   /* further alignment safeguard */
+   }
 
   /* Tighten overall vertical spacing */
   .exp-block {
